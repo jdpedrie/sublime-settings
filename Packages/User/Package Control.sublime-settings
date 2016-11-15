@@ -1,0 +1,33 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AndyPHP",
+		"ApacheConf.tmLanguage",
+		"Babel",
+		"BracketHighlighter",
+		"CodeFormatter",
+		"Dockerfile Syntax Highlighting",
+		"GitGutter",
+		"JavaScriptNext - ES6 Syntax",
+		"JSX",
+		"Package Control",
+		"PHP Companion",
+		"PHP Modern",
+		"Phpcs",
+		"PhpDoc",
+		"Predawn",
+		"Puppet",
+		"SideBarEnhancements",
+		"SublimeCodeIntel",
+		"TrailingSpaces",
+		"Twig"
+	],
+	"repositories":
+	[
+		"https://github.com/farcaller/DashDoc"
+	]
+}

@@ -1,0 +1,1 @@
+{"platforms": ["*"], "url": "https://github.com/OmniSharp/Kulture", "version": "2015.05.06.06.35.51", "sublime_text": ">=3000", "dependencies": [], "description": "Sublime extension for ASP.NET vNext"}

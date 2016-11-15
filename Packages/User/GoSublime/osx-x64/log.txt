@@ -1,0 +1,618 @@
+
+** 2015-07-20 13:42:18.665009 **:
+MarGo: Missing required environment variables: GOPATH
+See the `Quirks` section of USAGE.md for info
+--------------------------------
+margo: 2015/07/20 16:23:17 broker.go:105: gocode_calltip#mg9.autoken.f1f22830-dacd-4057-b164-28407318a905 PANIC: runtime error: index out of range
+goroutine 12 [running]:
+main.func·001()
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:104 +0xc7
+gosubli.me/something-borrowed/gocode.method_of(0x8757f0, 0xc20836b8c0, 0x0, 0x0)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/decl.go:322 +0x1f7
+gosubli.me/something-borrowed/gocode.func·010(0xc2084ff310)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/declcache.go:150 +0x1c8
+gosubli.me/something-borrowed/gocode.foreach_decl(0x8757f0, 0xc20836b8c0, 0xc20850d6d0)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/decl.go:1300 +0x26c
+gosubli.me/something-borrowed/gocode.append_to_top_decls(0xc20836ba40, 0x8757f0, 0xc20836b8c0, 0xc2083e3f70)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/declcache.go:169 +0x64
+gosubli.me/something-borrowed/gocode.(*auto_complete_file).process_data(0xc208068c40, 0xc2082d8000, 0x6dc, 0x800)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/autocompletefile.go:70 +0x52c
+gosubli.me/something-borrowed/gocode.(*auto_complete_context).apropos(0xc208035e00, 0xc2082d8000, 0x6dc, 0x800, 0xc2082379d0, 0x69, 0x385, 0x0, 0x0, 0x0, ...)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/autocompletecontext.go:241 +0xc9
+gosubli.me/something-borrowed/gocode.(*margoState).Complete(0xc2080852c0, 0x1, 0x79f988, 0x0, 0xc2083e33f0, 0xd, 0xc2083e38e0, 0x1, 0x1, 0xc2082d8000, ...)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/gosublime_gocode_bridge.go:52 +0x11f
+main.(*mGocode).completions(0xc2082e4000, 0xc2082d8000, 0x6dc, 0x800, 0xc2082379d0, 0x69, 0x385, 0x0, 0x0, 0x0)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/m_gocode.go:95 +0x138
+main.(*mGocode).calltips(0xc2082e4000, 0xc2082d8000, 0x6dc, 0x800, 0xc2082379d0, 0x69, 0x387, 0x0, 0x0, 0x0)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/m_gocode.go:105 +0x1b8
+main.(*mGocode).Call(0xc2082e4000, 0x0, 0x0, 0x0, 0x0)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/m_gocode.go:74 +0x528
+main.(*Broker).call(0xc20800a0e0, 0xc20839c000, 0x879d68, 0xc2082e4000)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:113 +0xb8
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:188 +0xd2
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 1 [syscall]:
+syscall.Syscall(0x3, 0x0, 0xc20800f000, 0x1000, 0xc2083e3378, 0x888018, 0xc208298902)
+	/usr/local/go/src/syscall/asm_darwin_amd64.s:20 +0x5
+syscall.read(0x0, 0xc20800f000, 0x1000, 0x1000, 0x9, 0x0, 0x0)
+	/usr/local/go/src/syscall/zsyscall_darwin_amd64.go:970 +0x6e
+syscall.Read(0x0, 0xc20800f000, 0x1000, 0x1000, 0xc208088190, 0x0, 0x0)
+	/usr/local/go/src/syscall/syscall_unix.go:136 +0x58
+os.(*File).read(0xc208038000, 0xc20800f000, 0x1000, 0x1000, 0x7b, 0x0, 0x0)
+	/usr/local/go/src/os/file_unix.go:191 +0x86
+os.(*File).Read(0xc208038000, 0xc20800f000, 0x1000, 0x1000, 0x1, 0x0, 0x0)
+	/usr/local/go/src/os/file.go:95 +0x91
+bufio.(*Reader).fill(0xc20802a060)
+	/usr/local/go/src/bufio/bufio.go:97 +0x1ce
+bufio.(*Reader).ReadSlice(0xc20802a060, 0xc20802a30a, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/usr/local/go/src/bufio/bufio.go:295 +0x257
+bufio.(*Reader).ReadBytes(0xc20802a060, 0xc20802a30a, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/usr/local/go/src/bufio/bufio.go:374 +0xd2
+main.(*Broker).accept(0xc20800a0e0, 0xc20802a300, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:128 +0x47
+main.(*Broker).Loop(0xc20800a0e0, 0xc208030001)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:213 +0x2df
+main.main()
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/main.go:140 +0xbb3
+
+goroutine 6 [chan receive, 71 minutes]:
+gosubli.me/something-borrowed/gocode.func·021()
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/utils.go:112 +0x7d
+created by gosubli.me/something-borrowed/gocode.new_file_reader
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/utils.go:116 +0xe7
+
+goroutine 7 [chan receive, 158 minutes]:
+main.func·003()
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/g_autoinst.go:114 +0x70
+created by main.init·2
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/g_autoinst.go:117 +0x25
+
+goroutine 17 [sleep, locked to thread]:
+main.func·037()
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/oom.go:31 +0x371
+created by main.startOomKiller
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/oom.go:33 +0x8c
+
+goroutine 18 [sleep]:
+main.func·033()
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/main.go:122 +0x51
+created by main.main
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/main.go:131 +0xaf9
+
+goroutine 19 [chan receive, 158 minutes]:
+main.func·034()
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/main.go:135 +0x6d
+created by main.main
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/main.go:138 +0xb68
+
+goroutine 10 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 11 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 13 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 14 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 15 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 16 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 33 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 34 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 35 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 36 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 37 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 38 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 39 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 40 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 41 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 42 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 43 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 44 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 45 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+
+margo: 2015/07/20 16:23:26 broker.go:105: gocode_calltip#mg9.autoken.bd1e7074-ff08-41e7-b43f-c82f1002960f PANIC: runtime error: index out of range
+goroutine 44 [running]:
+main.func·001()
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:104 +0xc7
+gosubli.me/something-borrowed/gocode.method_of(0x8757f0, 0xc2083fdbf0, 0x0, 0x0)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/decl.go:322 +0x1f7
+gosubli.me/something-borrowed/gocode.func·010(0xc2084d3860)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/declcache.go:150 +0x1c8
+gosubli.me/something-borrowed/gocode.foreach_decl(0x8757f0, 0xc2083fdbf0, 0xc2084836d0)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/decl.go:1300 +0x26c
+gosubli.me/something-borrowed/gocode.append_to_top_decls(0xc2083fddd0, 0x8757f0, 0xc2083fdbf0, 0xc208029c50)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/declcache.go:169 +0x64
+gosubli.me/something-borrowed/gocode.(*auto_complete_file).process_data(0xc208068c40, 0xc208406000, 0x6f6, 0x800)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/autocompletefile.go:70 +0x52c
+gosubli.me/something-borrowed/gocode.(*auto_complete_context).apropos(0xc208035e00, 0xc208406000, 0x6f6, 0x800, 0xc2082a81c0, 0x69, 0x39f, 0x0, 0x0, 0x0, ...)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/autocompletecontext.go:241 +0xc9
+gosubli.me/something-borrowed/gocode.(*margoState).Complete(0xc2080852c0, 0x1, 0x79f988, 0x0, 0xc208089db0, 0xd, 0xc2083e3980, 0x1, 0x1, 0xc208406000, ...)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/gosublime_gocode_bridge.go:52 +0x11f
+main.(*mGocode).completions(0xc208290d00, 0xc208406000, 0x6f6, 0x800, 0xc2082a81c0, 0x69, 0x39f, 0x0, 0x0, 0x0)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/m_gocode.go:95 +0x138
+main.(*mGocode).calltips(0xc208290d00, 0xc208406000, 0x6f6, 0x800, 0xc2082a81c0, 0x69, 0x3a1, 0x0, 0x0, 0x0)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/m_gocode.go:105 +0x1b8
+main.(*mGocode).Call(0xc208290d00, 0x0, 0x0, 0x0, 0x0)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/m_gocode.go:74 +0x528
+main.(*Broker).call(0xc20800a0e0, 0xc2082bc7a0, 0x879d68, 0xc208290d00)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:113 +0xb8
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:188 +0xd2
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 1 [syscall]:
+syscall.Syscall(0x3, 0x0, 0xc20800f000, 0x1000, 0xc208089d38, 0x868380, 0xc20846f91c)
+	/usr/local/go/src/syscall/asm_darwin_amd64.s:20 +0x5
+syscall.read(0x0, 0xc20800f000, 0x1000, 0x1000, 0x9, 0x0, 0x0)
+	/usr/local/go/src/syscall/zsyscall_darwin_amd64.go:970 +0x6e
+syscall.Read(0x0, 0xc20800f000, 0x1000, 0x1000, 0xc208088190, 0x0, 0x0)
+	/usr/local/go/src/syscall/syscall_unix.go:136 +0x58
+os.(*File).read(0xc208038000, 0xc20800f000, 0x1000, 0x1000, 0x7b, 0x0, 0x0)
+	/usr/local/go/src/os/file_unix.go:191 +0x86
+os.(*File).Read(0xc208038000, 0xc20800f000, 0x1000, 0x1000, 0x1, 0x0, 0x0)
+	/usr/local/go/src/os/file.go:95 +0x91
+bufio.(*Reader).fill(0xc20802a060)
+	/usr/local/go/src/bufio/bufio.go:97 +0x1ce
+bufio.(*Reader).ReadSlice(0xc20802a060, 0xc20802a30a, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/usr/local/go/src/bufio/bufio.go:295 +0x257
+bufio.(*Reader).ReadBytes(0xc20802a060, 0xc20802a30a, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/usr/local/go/src/bufio/bufio.go:374 +0xd2
+main.(*Broker).accept(0xc20800a0e0, 0xc20802a300, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:128 +0x47
+main.(*Broker).Loop(0xc20800a0e0, 0xc208030001)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:213 +0x2df
+main.main()
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/main.go:140 +0xbb3
+
+goroutine 6 [chan receive, 71 minutes]:
+gosubli.me/something-borrowed/gocode.func·021()
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/utils.go:112 +0x7d
+created by gosubli.me/something-borrowed/gocode.new_file_reader
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/utils.go:116 +0xe7
+
+goroutine 7 [chan receive, 159 minutes]:
+main.func·003()
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/g_autoinst.go:114 +0x70
+created by main.init·2
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/g_autoinst.go:117 +0x25
+
+goroutine 17 [sleep, locked to thread]:
+main.func·037()
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/oom.go:31 +0x371
+created by main.startOomKiller
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/oom.go:33 +0x8c
+
+goroutine 18 [sleep]:
+main.func·033()
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/main.go:122 +0x51
+created by main.main
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/main.go:131 +0xaf9
+
+goroutine 19 [chan receive, 159 minutes]:
+main.func·034()
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/main.go:135 +0x6d
+created by main.main
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/main.go:138 +0xb68
+
+goroutine 10 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 11 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 12 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 13 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 14 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 15 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 16 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 33 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 34 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 35 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 36 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 37 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 38 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 39 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 40 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 41 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 42 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 43 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 45 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+
+margo: 2015/07/20 16:24:13 broker.go:105: gocode_calltip#mg9.autoken.18520cde-db31-464d-ab7a-6c60e6948a37 PANIC: runtime error: index out of range
+goroutine 43 [running]:
+main.func·001()
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:104 +0xc7
+gosubli.me/something-borrowed/gocode.method_of(0x8757f0, 0xc20850b7a0, 0x0, 0x0)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/decl.go:322 +0x1f7
+gosubli.me/something-borrowed/gocode.func·010(0xc208525810)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/declcache.go:150 +0x1c8
+gosubli.me/something-borrowed/gocode.foreach_decl(0x8757f0, 0xc20850b7a0, 0xc20853d6d0)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/decl.go:1300 +0x26c
+gosubli.me/something-borrowed/gocode.append_to_top_decls(0xc20850b920, 0x8757f0, 0xc20850b7a0, 0xc2105efe10)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/declcache.go:169 +0x64
+gosubli.me/something-borrowed/gocode.(*auto_complete_file).process_data(0xc208068c40, 0xc208519000, 0x6fc, 0x800)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/autocompletefile.go:70 +0x52c
+gosubli.me/something-borrowed/gocode.(*auto_complete_context).apropos(0xc208035e00, 0xc208519000, 0x6fc, 0x800, 0xc210554ee0, 0x69, 0x3a6, 0x0, 0x0, 0x0, ...)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/autocompletecontext.go:241 +0xc9
+gosubli.me/something-borrowed/gocode.(*margoState).Complete(0xc2080852c0, 0x1, 0x79f988, 0x0, 0xc2105ef2b0, 0xd, 0xc2105ef7a0, 0x1, 0x1, 0xc208519000, ...)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/gosublime_gocode_bridge.go:52 +0x11f
+main.(*mGocode).completions(0xc210565c00, 0xc208519000, 0x6fc, 0x800, 0xc210554ee0, 0x69, 0x3a6, 0x0, 0x0, 0x0)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/m_gocode.go:95 +0x138
+main.(*mGocode).calltips(0xc210565c00, 0xc208519000, 0x6fc, 0x800, 0xc210554ee0, 0x69, 0x3a7, 0x0, 0x0, 0x0)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/m_gocode.go:105 +0x1b8
+main.(*mGocode).Call(0xc210565c00, 0x0, 0x0, 0x0, 0x0)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/m_gocode.go:74 +0x528
+main.(*Broker).call(0xc20800a0e0, 0xc20851cb40, 0x879d68, 0xc210565c00)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:113 +0xb8
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:188 +0xd2
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 1 [syscall]:
+syscall.Syscall(0x3, 0x0, 0xc20800f000, 0x1000, 0xc2105ef238, 0x89d208, 0xc208526924)
+	/usr/local/go/src/syscall/asm_darwin_amd64.s:20 +0x5
+syscall.read(0x0, 0xc20800f000, 0x1000, 0x1000, 0x9, 0x0, 0x0)
+	/usr/local/go/src/syscall/zsyscall_darwin_amd64.go:970 +0x6e
+syscall.Read(0x0, 0xc20800f000, 0x1000, 0x1000, 0xc208088190, 0x0, 0x0)
+	/usr/local/go/src/syscall/syscall_unix.go:136 +0x58
+os.(*File).read(0xc208038000, 0xc20800f000, 0x1000, 0x1000, 0x7b, 0x0, 0x0)
+	/usr/local/go/src/os/file_unix.go:191 +0x86
+os.(*File).Read(0xc208038000, 0xc20800f000, 0x1000, 0x1000, 0x1, 0x0, 0x0)
+	/usr/local/go/src/os/file.go:95 +0x91
+bufio.(*Reader).fill(0xc20802a060)
+	/usr/local/go/src/bufio/bufio.go:97 +0x1ce
+bufio.(*Reader).ReadSlice(0xc20802a060, 0xc20802a30a, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/usr/local/go/src/bufio/bufio.go:295 +0x257
+bufio.(*Reader).ReadBytes(0xc20802a060, 0xc20802a30a, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/usr/local/go/src/bufio/bufio.go:374 +0xd2
+main.(*Broker).accept(0xc20800a0e0, 0xc20802a300, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:128 +0x47
+main.(*Broker).Loop(0xc20800a0e0, 0xc208030001)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:213 +0x2df
+main.main()
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/main.go:140 +0xbb3
+
+goroutine 6 [chan receive, 72 minutes]:
+gosubli.me/something-borrowed/gocode.func·021()
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/utils.go:112 +0x7d
+created by gosubli.me/something-borrowed/gocode.new_file_reader
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/something-borrowed/gocode/utils.go:116 +0xe7
+
+goroutine 7 [chan receive, 159 minutes]:
+main.func·003()
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/g_autoinst.go:114 +0x70
+created by main.init·2
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/g_autoinst.go:117 +0x25
+
+goroutine 17 [sleep, locked to thread]:
+main.func·037()
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/oom.go:31 +0x371
+created by main.startOomKiller
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/oom.go:33 +0x8c
+
+goroutine 18 [sleep]:
+main.func·033()
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/main.go:122 +0x51
+created by main.main
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/main.go:131 +0xaf9
+
+goroutine 19 [chan receive, 159 minutes]:
+main.func·034()
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/main.go:135 +0x6d
+created by main.main
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/main.go:138 +0xb68
+
+goroutine 10 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 11 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 12 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 13 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 14 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 15 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 16 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 33 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 34 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 35 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 36 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 37 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 38 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 39 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 40 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 41 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 42 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 44 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+goroutine 45 [chan receive]:
+main.(*Broker).worker(0xc20800a0e0, 0xc20801cc40, 0xc20802a300)
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:187 +0x87
+created by main.(*Broker).Loop
+	/Users/jpedrie/Library/Application Support/Sublime Text 3/Packages/GoSublime/src/gosubli.me/margo/broker.go:209 +0x2af
+
+
+
+** 2016-04-17 13:29:51.320121 **:
+MarGo: MarGo build failed
+cmd: `['', 'build', '-v', '-x', '-o', 'gosublime.margo_r16.03.22-1_go?.exe', 'gosubli.me/margo']`
+stdout: ``
+stderr: ``
+exception: `Cannot find command `go``
+--------------------------------
+
+** 2016-04-17 13:29:51.328642 **:
+MarGo: Missing required environment variables: GOROOT
+See the `Quirks` section of USAGE.md for info
+--------------------------------

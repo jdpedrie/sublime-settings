@@ -1,0 +1,41 @@
+[
+	{
+		"caption": "CodeFormatter: Format Code",
+		"command": "code_formatter"
+	},
+	{
+		"caption": "CodeFormatter: Format as PHP Syntax",
+		"command": "code_formatter",
+		"args": {
+			"syntax": "php"
+		}
+	},
+	{
+		"caption": "CodeFormatter: Format as Javascript Syntax",
+		"command": "code_formatter",
+		"args": {
+			"syntax": "javascript"
+		}
+	},
+	{
+		"caption": "CodeFormatter: Format as CSS Syntax",
+		"command": "code_formatter",
+		"args": {
+			"syntax": "css"
+		}
+	},
+	{
+		"caption": "CodeFormatter: Format as HTML Syntax",
+		"command": "code_formatter",
+		"args": {
+			"syntax": "html"
+		}
+	},
+	{
+		"caption": "CodeFormatter: Format as Python Syntax",
+		"command": "code_formatter",
+		"args": {
+			"syntax": "python"
+		}
+	}
+]

@@ -1,0 +1,43 @@
+{
+	"always_show_minimap_viewport": true,
+	"auto_complete_selector": true,
+	"binary_file_patterns":
+	[
+		"doc/*"
+	],
+	"bold_folder_labels": true,
+	"color_scheme": "Packages/Predawn/predawn.tmTheme",
+	"ensure_newline_at_eof_on_save": true,
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		".idea",
+		".sass-cache"
+	],
+	"font_face": "Bitstream Vera Sans Mono",
+	"font_size": 15,
+	"git_binary": "/usr/bin/git",
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Phpcs",
+		"Vintage"
+	],
+	"index_workers": 1,
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
+	"rulers":
+	[
+		80,
+		120
+	],
+	"scroll_past_end": true,
+	"show_full_path": true,
+	"tab_size": 2,
+	"theme": "predawn-DEV.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true
+}
